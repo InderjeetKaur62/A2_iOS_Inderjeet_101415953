@@ -88,6 +88,14 @@ struct ProductDetailView: View {
             Text(product.name ?? "Unknown")
                 .font(.title)
 
+            Text(product.descriptionText ?? "No description")
+                .font(.body)
+            Text("Price: $\(product.price, specifier: "%.2f")")
+            Text("Provider: \(product.provider ?? "Unknown")")
+        }
+        .padding()
+    }
+}
 
 
     
