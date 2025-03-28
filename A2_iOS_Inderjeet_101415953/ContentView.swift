@@ -96,6 +96,15 @@ struct ProductDetailView: View {
         .padding()
     }
 }
+struct AddProductView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @State private var name = ""
+    @State private var descriptionText = ""
+    @State private var price = ""
+    @State private var provider = ""
+    
+    @Environment(\.presentationMode) var presentationMode
 
 
     
