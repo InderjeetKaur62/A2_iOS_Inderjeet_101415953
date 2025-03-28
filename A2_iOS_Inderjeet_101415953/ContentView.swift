@@ -54,7 +54,14 @@ struct ContentView: View {
                 }
                 NavigationLink("View All Products", destination: ProductListView())
                     .padding()
-
+                
+                NavigationLink("Add New Product", destination: AddProductView())
+                    .padding()
+            }
+            .navigationTitle("Product Catalog")
+        }
+    }
+}
 
     
     
