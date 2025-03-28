@@ -62,6 +62,7 @@ struct ContentView: View {
         }
     }
 }
+
 struct ProductListView: View {
     @FetchRequest(
         entity: Product.entity(),
@@ -122,43 +123,21 @@ struct AddProductView: View {
         }
         .navigationTitle("Add Product")
     }
-}
-private func addProduct() {
-    let newProduct = Product(context: viewContext)
-    newProduct.id = UUID()
-    newProduct.name = name
-    newProduct.descriptionText = descriptionText
-    newProduct.price = Double(price) ?? 0.0
-    newProduct.provider = provider
-    do {
-        try viewContext.save()
-        presentationMode.wrappedValue.dismiss()
-    } catch {
-        print("Error saving product: \(error)")
+    
+    private func addProduct() {
+        let newProduct = Product(context: viewContext)
+        newProduct.id = UUID()
+        newProduct.name = name
+        newProduct.descriptionText = descriptionText
+        newProduct.price = Double(price) ?? 0.0
+        newProduct.provider = provider
+        do {
+            try viewContext.save()
+            presentationMode.wrappedValue.dismiss()
+        } catch {
+            print("Error saving product: \(error)")
+        }
     }
+    
+    
 }
-}
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-
