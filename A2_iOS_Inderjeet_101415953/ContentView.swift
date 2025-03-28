@@ -80,6 +80,14 @@ struct ProductListView: View {
         .navigationTitle("Product List")
     }
 }
+struct ProductDetailView: View {
+    var product: Product
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(product.name ?? "Unknown")
+                .font(.title)
+
 
 
     
