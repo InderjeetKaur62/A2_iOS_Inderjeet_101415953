@@ -27,6 +27,28 @@ struct ContentView: View {
                     .padding()
                 if !filteredProducts.isEmpty {
                     ProductDetailView(product: filteredProducts[currentIndex])
+                    HStack {
+                        Button(action: {
+                            if currentIndex > 0 {
+                                currentIndex -= 1
+                            }
+                        }) {
+                            Image(systemName: "arrow.left.circle.fill")
+                                .font(.largeTitle)
+                        }
+                        .disabled(currentIndex == 0)
+                        
+                        Button(action: {
+                            if currentIndex < filteredProducts.count - 1 {
+                                currentIndex += 1
+                            }
+                        }) {
+                            Image(systemName: "arrow.right.circle.fill")
+                                .font(.largeTitle)
+                        }
+                        .disabled(currentIndex >= filteredProducts.count - 1)
+                    }
+                    .padding()
 
 
     
