@@ -52,6 +52,8 @@ struct ContentView: View {
                 } else {
                     Text("No products available")
                 }
+                NavigationLink("View All Products", destination: ProductListView())
+                    .padding()
 
 
     
