@@ -115,6 +115,15 @@ struct AddProductView: View {
                     .keyboardType(.decimalPad)
                 TextField("Provider", text: $provider)
             }
+            
+            Button("Add Product") {
+                addProduct()
+            }
+        }
+        .navigationTitle("Add Product")
+    }
+}
+
 
 
     
