@@ -49,6 +49,9 @@ struct ContentView: View {
                         .disabled(currentIndex >= filteredProducts.count - 1)
                     }
                     .padding()
+                } else {
+                    Text("No products available")
+                }
 
 
     
