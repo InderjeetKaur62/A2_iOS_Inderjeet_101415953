@@ -62,6 +62,25 @@ struct ContentView: View {
         }
     }
 }
+struct ProductListView: View {
+    @FetchRequest(
+        entity: Product.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Product.name, ascending: true)]
+    ) var products: FetchedResults<Product>
+    
+    var body: some View {
+        List(products) { product in
+            VStack(alignment: .leading) {
+                Text(product.name ?? "Unknown")
+                    .font(.headline)
+                Text(product.descriptionText ?? "No description")
+                    .font(.subheadline)
+            }
+        }
+        .navigationTitle("Product List")
+    }
+}
+
 
     
     
@@ -75,6 +94,7 @@ struct ContentView: View {
     
     
     
+
     
     
     
@@ -82,5 +102,4 @@ struct ContentView: View {
     
     
     
-    
-}
+
