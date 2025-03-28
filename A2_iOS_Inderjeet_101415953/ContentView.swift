@@ -25,6 +25,8 @@ struct ContentView: View {
                 TextField("Search products...", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                if !filteredProducts.isEmpty {
+                    ProductDetailView(product: filteredProducts[currentIndex])
 
 
     
