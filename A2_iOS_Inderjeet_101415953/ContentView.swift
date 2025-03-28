@@ -10,6 +10,14 @@ struct ContentView: View {
     
     @State private var searchText = ""
     @State private var currentIndex = 0
+    
+    var filteredProducts: [Product] {
+        if searchText.isEmpty {
+            return Array(products)
+        } else {
+            return products.filter { $0.name?.localizedCaseInsensitiveContains(searchText) ?? false || $0.descriptionText?.localizedCaseInsensitiveContains(searchText) ?? false }
+        }
+    }
 
     
     
