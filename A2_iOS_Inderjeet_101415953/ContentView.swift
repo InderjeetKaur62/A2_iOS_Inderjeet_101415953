@@ -18,6 +18,14 @@ struct ContentView: View {
             return products.filter { $0.name?.localizedCaseInsensitiveContains(searchText) ?? false || $0.descriptionText?.localizedCaseInsensitiveContains(searchText) ?? false }
         }
     }
+    
+    var body: some View {
+        NavigationView {
+            VStack {
+                TextField("Search products...", text: $searchText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+
 
     
     
