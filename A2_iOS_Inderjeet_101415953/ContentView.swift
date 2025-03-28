@@ -123,6 +123,13 @@ struct AddProductView: View {
         .navigationTitle("Add Product")
     }
 }
+private func addProduct() {
+    let newProduct = Product(context: viewContext)
+    newProduct.id = UUID()
+    newProduct.name = name
+    newProduct.descriptionText = descriptionText
+    newProduct.price = Double(price) ?? 0.0
+    newProduct.provider = provider
 
 
 
