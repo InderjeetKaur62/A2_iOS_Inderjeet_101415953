@@ -130,6 +130,14 @@ private func addProduct() {
     newProduct.descriptionText = descriptionText
     newProduct.price = Double(price) ?? 0.0
     newProduct.provider = provider
+    do {
+        try viewContext.save()
+        presentationMode.wrappedValue.dismiss()
+    } catch {
+        print("Error saving product: \(error)")
+    }
+}
+}
 
 
 
