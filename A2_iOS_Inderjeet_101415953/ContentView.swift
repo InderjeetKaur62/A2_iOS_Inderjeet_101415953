@@ -105,6 +105,16 @@ struct AddProductView: View {
     @State private var provider = ""
     
     @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        Form {
+            Section(header: Text("Product Details")) {
+                TextField("Name", text: $name)
+                TextField("Description", text: $descriptionText)
+                TextField("Price", text: $price)
+                    .keyboardType(.decimalPad)
+                TextField("Provider", text: $provider)
+            }
 
 
     
